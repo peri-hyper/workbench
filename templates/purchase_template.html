@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采购单</title>
+    <style>
+        table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 5px auto
+            }
+        tr {
+         page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        .borderless-table td {
+            padding: 2px; /* 设置单元格内边距 */
+            text-align: left; /* 设置文本居中对齐 */
+            border: none
+        }
+
+        .borderless-table th {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 8px; /* 设置表头内边距 */
+            {#text-align: center; /* 设置文本居中对齐 */#}
+        }
+                /* 设置列宽 */
+        .table th:nth-child(1), .table td:nth-child(1) {
+            width: 6%; /* 5% 的宽度 */
+        }
+        .table th:nth-child(2), .table td:nth-child(2) {
+            width: 15%; /* 20% 的宽度 */
+        }
+        .table th:nth-child(3), .table td:nth-child(3) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        .table th:nth-child(4), .table td:nth-child(4) {
+            width: 8%; /* 10% 的宽度 */
+        }
+        .table th:nth-child(5), .table td:nth-child(5) {
+            width: 12%; /* 10% 的宽度 */
+        }
+        .table th:nth-child(6), .table td:nth-child(6) {
+            width: 12%; /* 10% 的宽度 */
+        }
+        .table th:nth-child(7), .table td:nth-child(7) {
+            width: 12%; /* 15% 的宽度 */
+        }
+        .table th:nth-child(8), .table td:nth-child(8) {
+            width: 11%; /* 15% 的宽度 */
+        }
+        /* 文字居中对齐 */
+    </style>
+</head>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>内容</th>
+        <th>规格</th>
+        <th>单位</th>
+        <th>数量</th>
+        <th>单价</th>
+        <th>总价</th>
+        <th>备注</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for row in rows %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row.product_name }}</td>
+            <td>{{ row.product_size }}</td>
+            <td>{{ row.unit_label }}</td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.unit_price }}</td>
+            <td>{{ row.total_prices }}</td>
+            <td>
+                {% if row.remark is none %}
+                {% else %}
+                    {{ row.remark }}
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+</br></br></br></br>
+<div>
+    备注:</br>
+    {{ info.remark }}
+</div>
+</body>
+</html>

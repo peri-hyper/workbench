@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送货单</title>
+    <style>
+        table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 5px auto
+            }
+              tr {
+         page-break-inside: avoid;
+        }
+      tfoot {
+      border: 0px solid black;
+
+      }
+
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        /* 设置不显示边框的表格样式 */
+        .borderless-table {
+
+            border-collapse: collapse;
+            border: none; /* 去掉边框 */
+        }
+
+        .borderless-table td {
+            padding: 6px; /* 设置单元格内边距 */
+            text-align: left; /* 设置文本居中对齐 */
+            border: none
+        }
+
+        .borderless-table th {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 8px; /* 设置表头内边距 */
+            {#text-align: center; /* 设置文本居中对齐 */#}
+        }
+        .borderless-table th:nth-child(1), .borderless-table td:nth-child(1) {
+            width: 60%; /* 5% 的宽度 */
+        }
+        .borderless-table th:nth-child(2), .borderless-table td:nth-child(2) {
+            width: 40%; /* 5% 的宽度 */
+        }
+
+        /* 设置列宽 */
+        .table2 th:nth-child(1), .table2 td:nth-child(1) {
+            width: 9%; /* 5% 的宽度 */
+        }
+        .table2 th:nth-child(2), .table2 td:nth-child(2) {
+            width: 15%; /* 20% 的宽度 */
+        }
+        .table2 th:nth-child(3), .table2 td:nth-child(3) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        .table2 th:nth-child(4), .table2 td:nth-child(4) {
+            width: 8%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(5), .table2 td:nth-child(5) {
+            width: 10%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(6), .table2 td:nth-child(6) {
+            width: 15%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(7), .table2 td:nth-child(7) {
+            width: 23%; /* 15% 的宽度 */
+        }
+        /* 文字居中对齐 */
+        .table2 th, .table2 td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <table class="table2">
+            <thead  style="border-style:none" >
+{#            <th colspan="5" style="border-style:none" >#}
+{#            <h1 style="height:160px;visibility:hidden;"> </h1>#}
+{#          </th>#}
+            <tr>
+                <th>序号</th>
+                <th>品名</th>
+                <th>规格</th>
+                <th>单位</th>
+                <th>数量</th>
+                <th>编号</th>
+                <th>订单号</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ loop.index }}</td> <!-- 自增序号 -->
+                <td>{{ row.commodity_details }}</td>
+                <td>{{ row.commodity_size }}</td>
+                <td>{{ row.commodity_units }}</td>
+                <td>{{ row.shipping_quantity }}</td>
+                <!-- 检查是否需要合并行 -->
+                <td>{{ row.control_no }}</td>
+                <td>{{ row.order_number_id }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+        <table class="table2">
+            <tbody>
+                <tr>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;text-align: center">合计</td>
+                    <td style="border: none;text-align: center">{{ info.total_quantity }}</td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            出货批次:</br>
+            {% for item in picilist %}
+                {{ item.order_number }}&nbsp;&nbsp;第{{ item.num }}批  {{ item.order_number_with_suffix }} </br>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
