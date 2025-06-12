@@ -1,0 +1,198 @@
+import json
+import os
+
+from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.db.models import Q
+from loguru import logger
+
+from app.api_code import API_OK, API_SYS_ERR
+from app.models import InspectionWeldingRecord
+
+
+class InspectionWeldingRecordView(object):
+    """
+    针对 InspectionWeldingRecord 模型(焊接检验记录)的增删改查后端示例
+    """
+
+    def query(self, request):
+        """
+        列表查询：支持分页和简单搜索，返回所有记录的字段并包含文件URL
+        """
+        page_num = request.data.get('pageNum', 1)
+        page_size = request.data.get('pageSize', 10)
+        search_data = request.data.get('search_data', '')
+
+        try:
+            # 模糊匹配 inspection_number 或 order_number
+            query_set = InspectionWeldingRecord.objects.filter(
+                Q(inspection_number__icontains=search_data) |
+                Q(order_number__order_number__icontains=search_data)
+            ).order_by('-created_date')
+
+            paginator = Paginator(query_set, page_size)
+            page_data = paginator.page(page_num)
+
+            result_list = []
+            for record in page_data:
+                file_name = os.path.basename(record.reference_image.name) if record.reference_image else None
+
+                # ★ 新增字段一起返回
+                item = {
+                    'inspection_quantity': record.inspection_quantity,
+                    'inspection_location': record.inspection_location,
+                    'inspection_standard': record.inspection_standard,
+                    'inspection_number': record.inspection_number,
+                    'general_tolerance': record.general_tolerance,
+                    'order_number': record.order_number.order_number if record.order_number else None,
+                    'customer_name': record.customer_name.customer_name if record.customer_name else None,
+                    'component_number': record.component_number,
+                    'welding_quantity': record.welding_quantity,
+                    'created_date': record.created_date.strftime('%Y-%m-%d')
+                        if record.created_date else None,
+                    'reference_image_url': file_name,
+                    'inspector_name': record.inspector_name,
+
+                    # ★ 6 个复选框（布尔）
+                    'ck_in_line_butt_joint': record.ck_in_line_butt_joint,
+                    'ck_tee_joint': record.ck_tee_joint,
+                    'ck_node_tky_joint': record.ck_node_tky_joint,
+                    'ck_cruciform_joint': record.ck_cruciform_joint,
+                    'ck_corner_joint': record.ck_corner_joint,
+                    'ck_other_joint': record.ck_other_joint,
+
+                    # ★ “其他”文本
+                    'other_joint_text': record.other_joint_text,
+                }
+                result_list.append(item)
+
+            resp = {
+                'code': API_OK,
+                'msg': 'success',
+                'data': result_list,
+                'total': paginator.count
+            }
+            return JsonResponse(resp)
+        except Exception as e:
+            logger.error(str(e))
+            return JsonResponse({'code': 50000, 'msg': str(e), 'data': ''})
+
+    def addRecord(self, request):
+        """
+        新增焊接检验主记录
+        """
+        modal_form_str = request.POST.get('modalForm', '{}')
+        print(modal_form_str)
+        logger.info(f"raw modalForm => {modal_form_str}")
+        try:
+            data_dict = json.loads(modal_form_str)
+        except json.JSONDecodeError:
+            data_dict = {}
+            logger.warning("Failed to parse outer modalForm as JSON. Using empty dict.")
+
+        modalForm = data_dict.get("modalForm", {})
+
+        # 获取上传文件 (例如参考图片)
+        file_obj = request.FILES.get("reference_image", None)
+
+        # 处理外键字段
+        from app.models import OrderTable, CustomerTable
+        foreign_key_fields = {}
+        for field in InspectionWeldingRecord._meta.get_fields():
+            if field.many_to_one:
+                fk_model = field.remote_field.model
+                fk_field_name = field.remote_field.field_name or fk_model._meta.pk.name
+                foreign_key_fields[field.name + '_id'] = (fk_model, fk_field_name)
+
+        addForm = {}
+        for key, value in modalForm.items():
+            if key in foreign_key_fields:
+                # 如果是外键字段
+                model_class, to_field_name = foreign_key_fields[key]
+                real_field_name = key[:-3]
+                obj = model_class.objects.get(**{to_field_name: value})
+                addForm[real_field_name] = obj
+            else:
+                # ★ 如果是普通字段(包括刚加的布尔字段/other_joint_text)，直接放进 dict
+                addForm[key] = value
+
+        if file_obj:
+            addForm["reference_image"] = file_obj
+
+        try:
+            new_record = InspectionWeldingRecord.objects.create(**addForm)
+        except Exception as e:
+            logger.error(str(e))
+            return JsonResponse({'code': API_SYS_ERR, 'msg': str(e), 'data': ''})
+
+        return JsonResponse({'code': API_OK, 'msg': 'succ', 'data': {'id': new_record.id}})
+
+    def deleteRecord(self, request):
+        """
+        删除焊接检验主记录
+        """
+        idmap = request.data.get('inspection_number', {})
+        try:
+            InspectionWeldingRecord.objects.filter(**idmap).delete()
+        except Exception as e:
+            logger.error(str(e))
+            return JsonResponse({'code': API_SYS_ERR, 'msg': str(e), 'data': ''})
+
+        return JsonResponse({'code': API_OK, 'msg': 'succ', 'data': ''})
+
+    def editRecord(self, request):
+        """
+        简易编辑: 先删除旧记录, 再创建新记录
+        """
+        modal_form_str = request.POST.get('modalForm', '{}')
+        logger.info(f"raw modalForm => {modal_form_str}")
+        try:
+            data_dict = json.loads(modal_form_str)
+        except json.JSONDecodeError:
+            data_dict = {}
+            logger.warning("Failed to parse outer modalForm. Using empty dict.")
+
+        new_data_dict = data_dict.get('modalForm', {})
+        if not new_data_dict:
+            return JsonResponse({'code': 0, 'msg': 'no new record data', 'data': ''})
+
+        old_number = new_data_dict.get('inspection_number', None)
+        if not old_number:
+            return JsonResponse({'code': 400, 'msg': 'missing old_inspection_number', 'data': ''})
+
+        try:
+            InspectionWeldingRecord.objects.filter(inspection_number=old_number).delete()
+        except Exception as e:
+            logger.error(f"editRecord delete error: {str(e)}")
+            return JsonResponse({'code': API_SYS_ERR, 'msg': f'delete fail: {str(e)}', 'data': ''})
+
+        file_obj = request.FILES.get("reference_image", None)
+
+        from app.models import OrderTable, CustomerTable
+        foreign_key_fields = {}
+        for field in InspectionWeldingRecord._meta.get_fields():
+            if field.many_to_one:
+                fk_model = field.remote_field.model
+                fk_field_name = field.remote_field.field_name or fk_model._meta.pk.name
+                foreign_key_fields[field.name + '_id'] = (fk_model, fk_field_name)
+
+        addForm = {}
+        for key, value in new_data_dict.items():
+            if key in foreign_key_fields:
+                model_class, to_field_name = foreign_key_fields[key]
+                real_field_name = key[:-3]
+                obj = model_class.objects.get(**{to_field_name: value})
+                addForm[real_field_name] = obj
+            else:
+                addForm[key] = value
+
+        if file_obj:
+            addForm["reference_image"] = file_obj
+
+        try:
+            new_record = InspectionWeldingRecord.objects.create(**addForm)
+        except Exception as e:
+            logger.error(f"editRecord create error: {str(e)}")
+            return JsonResponse({'code': API_SYS_ERR, 'msg': str(e), 'data': ''})
+
+        return JsonResponse({'code': API_OK, 'msg': 'edit done (delete+create)', 'data': {'new_id': new_record.id}})

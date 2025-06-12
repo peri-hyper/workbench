@@ -1,0 +1,34 @@
+### GET Request
+GET http://127.0.0.1:8000/vue-element-admin/backend/get_test
+Accept: application/json
+
+### POST Request
+POST http://127.0.0.1:8000/vue-element-admin/backend/post_test/
+Content-Type: application/json
+
+{
+  "key": "value"
+}
+
+### POST Request
+POST http://127.0.0.1:8000/vue-element-admin/backend/process/
+Content-Type: application/json
+
+{
+  "action": "complex_view",
+  "subaction": "get_processname_info"
+}
+
+### 新增用户
+POST http://127.0.0.1:8000/vue-element-admin/backend/process/
+Content-Type: application/json
+
+{
+  "action": "user_table_view",
+  "subaction": "addRecord",
+  "modalForm": {
+    "username": "admin",
+    "password": "123456",
+    "role": 1
+  }
+}
