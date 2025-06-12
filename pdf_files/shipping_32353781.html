@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送货单</title>
+    <style>
+        table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 5px auto
+            }
+              tr {
+         page-break-inside: avoid;
+        }
+      tfoot {
+      border: 0px solid black;
+
+      }
+
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        /* 设置不显示边框的表格样式 */
+        .borderless-table {
+
+            border-collapse: collapse;
+            border: none; /* 去掉边框 */
+        }
+
+        .borderless-table td {
+            padding: 6px; /* 设置单元格内边距 */
+            text-align: left; /* 设置文本居中对齐 */
+            border: none
+        }
+
+        .borderless-table th {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 8px; /* 设置表头内边距 */
+            
+        }
+        .borderless-table th:nth-child(1), .borderless-table td:nth-child(1) {
+            width: 60%; /* 5% 的宽度 */
+        }
+        .borderless-table th:nth-child(2), .borderless-table td:nth-child(2) {
+            width: 40%; /* 5% 的宽度 */
+        }
+
+        /* 设置列宽 */
+        .table2 th:nth-child(1), .table2 td:nth-child(1) {
+            width: 9%; /* 5% 的宽度 */
+        }
+        .table2 th:nth-child(2), .table2 td:nth-child(2) {
+            width: 15%; /* 20% 的宽度 */
+        }
+        .table2 th:nth-child(3), .table2 td:nth-child(3) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        .table2 th:nth-child(4), .table2 td:nth-child(4) {
+            width: 8%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(5), .table2 td:nth-child(5) {
+            width: 10%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(6), .table2 td:nth-child(6) {
+            width: 15%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(7), .table2 td:nth-child(7) {
+            width: 23%; /* 15% 的宽度 */
+        }
+        /* 文字居中对齐 */
+        .table2 th, .table2 td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <table id="table3" class="table2">
+            <thead  style="border-style:none" >
+
+
+
+            <tr>
+                <th>序号</th>
+                <th>品名</th>
+                <th>规格</th>
+                <th>单位</th>
+                <th>数量</th>
+                <th>编号</th>
+                <th>项目名称</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <td>1</td> <!-- 自增序号 -->
+                <td>s.s.#304水槽(單邊封口）</td>
+                <td>3000×800×150</td>
+                <td>件</td>
+                <td>2</td>
+                <td>G32</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>2</td> <!-- 自增序号 -->
+                <td>s.s.#304水槽</td>
+                <td>3000×795×150</td>
+                <td>件</td>
+                <td>20</td>
+                <td>G30</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>3</td> <!-- 自增序号 -->
+                <td>s.s.#304水槽</td>
+                <td>3000×800×150</td>
+                <td>件</td>
+                <td>19</td>
+                <td>G31</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>4</td> <!-- 自增序号 -->
+                <td>s.s.#304水槽(單邊封口）</td>
+                <td>1000×795×150</td>
+                <td>件</td>
+                <td>1</td>
+                <td>G33</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>5</td> <!-- 自增序号 -->
+                <td>s.s.#304水槽(單邊封口）</td>
+                <td>1000×800×150</td>
+                <td>件</td>
+                <td>1</td>
+                <td>G34</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>6</td> <!-- 自增序号 -->
+                <td>0.8mm泛水折件</td>
+                <td>3600×100×75</td>
+                <td>件</td>
+                <td>36</td>
+                <td>External gutter flashing</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>7</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>1196×133×70</td>
+                <td>件</td>
+                <td>88</td>
+                <td>Serrated closer 
+Grid L to Grid A</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>8</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折角</td>
+                <td>3000×35×35</td>
+                <td>件</td>
+                <td>35</td>
+                <td>Closer flashing
+to fix epdm</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>9</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折角</td>
+                <td>200×100×50</td>
+                <td>件</td>
+                <td>88</td>
+                <td>Lap flashing
+to fill the gap</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>10</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>3000×201×190</td>
+                <td>件</td>
+                <td>6</td>
+                <td>Gutter flashing
+Grid P to L </td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>11</td> <!-- 自增序号 -->
+                <td>鋁夾</td>
+                <td>80×64</td>
+                <td>對</td>
+                <td>1056</td>
+                <td>Clamp</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>12</td> <!-- 自增序号 -->
+                <td>SS316螺絲</td>
+                <td>M6×25mm（兩墊一母）</td>
+                <td>套</td>
+                <td>2120</td>
+                <td>BOLT/NUT1</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>13</td> <!-- 自增序号 -->
+                <td>3mm鍍鋅U槽</td>
+                <td>1140×50×50</td>
+                <td>件</td>
+                <td>80</td>
+                <td>C1</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>14</td> <!-- 自增序号 -->
+                <td>8.8級螺絲</td>
+                <td>M6×25mm（兩墊一彈一母）</td>
+                <td>套</td>
+                <td>320</td>
+                <td>BOLT/NUT2</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>15</td> <!-- 自增序号 -->
+                <td>0.8mm泛水板</td>
+                <td>3000×150×0.8mm</td>
+                <td>件</td>
+                <td>21</td>
+                <td>LAP-</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>16</td> <!-- 自增序号 -->
+                <td>0.8mm泛水折件</td>
+                <td>3000×418×100</td>
+                <td>件</td>
+                <td>3</td>
+                <td>F3</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>17</td> <!-- 自增序号 -->
+                <td>0.8mm泛水折件</td>
+                <td>3000×318×100</td>
+                <td>件</td>
+                <td>3</td>
+                <td>F2</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>18</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>3000×115×75</td>
+                <td>件</td>
+                <td>6</td>
+                <td>GC-1</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>19</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>2400×104×65</td>
+                <td>件</td>
+                <td>18</td>
+                <td>G2</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>20</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>3000×145×59</td>
+                <td>件</td>
+                <td>5</td>
+                <td>G5</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>21</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>3000×80×15</td>
+                <td>件</td>
+                <td>5</td>
+                <td>G4</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>22</td> <!-- 自增序号 -->
+                <td>1.2mm鍍鋅折件</td>
+                <td>320×80×23</td>
+                <td>件</td>
+                <td>100</td>
+                <td>Z-1</td>
+                <td>西草灣道蜆殼油庫行政大樓</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+        <table class="table2">
+            <tbody>
+                <tr>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;text-align: center">合计</td>
+                    <td style="border: none;text-align: center">4033</td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            出货批次:</br>
+            
+                TK20241030&nbsp;&nbsp;第1批  (完) </br>
+            
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

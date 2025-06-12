@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送货单</title>
+    <style>
+        table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 5px auto
+            }
+        tr {
+         page-break-inside: avoid;
+        }
+      tfoot {
+      border: 0px solid black;
+
+      }
+
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        .borderless-table td {
+            padding: 2px; /* 设置单元格内边距 */
+            text-align: left; /* 设置文本居中对齐 */
+            border: none
+        }
+
+        .borderless-table th {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 8px; /* 设置表头内边距 */
+            
+        }
+        .borderless-table th:nth-child(1), .borderless-table td:nth-child(1) {
+            width: 60%; /* 5% 的宽度 */
+        }
+        .borderless-table th:nth-child(2), .borderless-table td:nth-child(2) {
+            width: 40%; /* 5% 的宽度 */
+        }
+
+        /* 设置列宽 */
+        .table2 th:nth-child(1), .table2 td:nth-child(1) {
+            width: 6%; /* 5% 的宽度 */
+        }
+        .table2 th:nth-child(2), .table2 td:nth-child(2) {
+            width: 14%; /* 20% 的宽度 */
+        }
+        .table2 th:nth-child(3), .table2 td:nth-child(3) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        .table2 th:nth-child(4), .table2 td:nth-child(4) {
+            width: 8%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(5), .table2 td:nth-child(5) {
+            width: 10%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(6), .table2 td:nth-child(6) {
+            width: 15%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(7), .table2 td:nth-child(7) {
+            width: 18%; /* 15% 的宽度 */
+        }
+        .table2 th:nth-child(8), .table2 td:nth-child(8) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        /* 文字居中对齐 */
+        .table2 th, .table2 td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <table class="table2">
+            <thead  style="border-style:none" >
+
+
+
+            <tr>
+                <th>序号</th>
+                <th>品名</th>
+                <th>规格</th>
+                <th>单位</th>
+                <th>数量</th>
+                <th>编号</th>
+                <th>订单号</th>
+                <th>重量(kg)</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <td>1</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5912×250×100</td>
+                <td>件</td>
+                <td>79</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P101</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>2</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5738×250×100</td>
+                <td>件</td>
+                <td>6</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P102</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>3</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5990×250×100</td>
+                <td>件</td>
+                <td>10</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P106</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>4</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5990×250×100</td>
+                <td>件</td>
+                <td>36</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P107</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>5</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5990×250×100</td>
+                <td>件</td>
+                <td>42</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P108</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>6</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>5990×250×100</td>
+                <td>件</td>
+                <td>42</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P109</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>7</td> <!-- 自增序号 -->
+                <td>5mm鍍鋅C槽</td>
+                <td>6990×250×100</td>
+                <td>件</td>
+                <td>36</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>72-P110</td>
+                <td>SON20413-SY24-008</td>
+                <td>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>8</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅角鐵焊板</td>
+                <td>3965×100×100</td>
+                <td>件</td>
+                <td>1</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>79TH-1</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>9</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅槽鋼</td>
+                <td>300×102×51</td>
+                <td>件</td>
+                <td>20</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>82-2</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>10</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅槽鋼焊板</td>
+                <td>750×400×200</td>
+                <td>件</td>
+                <td>4</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>83-1</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>11</td> <!-- 自增序号 -->
+                <td>1mm鍍鋅拉也片</td>
+                <td>100×100×1mm</td>
+                <td>件</td>
+                <td>100</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-07-1</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>12</td> <!-- 自增序号 -->
+                <td>2mm鍍鋅拉也片</td>
+                <td>100×100×2mm</td>
+                <td>件</td>
+                <td>50</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-07-1</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>13</td> <!-- 自增序号 -->
+                <td>鍍鋅扁通焊板</td>
+                <td>3540×330×90</td>
+                <td>件</td>
+                <td>10</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-08-1</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>14</td> <!-- 自增序号 -->
+                <td>鍍鋅扁通焊板</td>
+                <td>3540×330×90</td>
+                <td>件</td>
+                <td>10</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-08-2</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>15</td> <!-- 自增序号 -->
+                <td>鍍鋅扁通焊板</td>
+                <td>4743×330×90</td>
+                <td>件</td>
+                <td>10</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-09</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>16</td> <!-- 自增序号 -->
+                <td>鍍鋅扁通焊板</td>
+                <td>2360×330×90</td>
+                <td>件</td>
+                <td>10</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>LV-10</td>
+                <td>SON20412 -SY24-003</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>17</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>3420×250×100</td>
+                <td>件</td>
+                <td>24</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M401</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>18</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>6988×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M402</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>19</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>5990×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M403</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>20</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>5992×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M404</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>21</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>6992×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M405</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>22</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>7177×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M406</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>23</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>6990×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M407</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>24</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>7165×250×100</td>
+                <td>件</td>
+                <td>7</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M408</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>25</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>6490×250×100</td>
+                <td>件</td>
+                <td>21</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M409</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>26</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅扁通</td>
+                <td>5490×250×100</td>
+                <td>件</td>
+                <td>14</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-M410</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>27</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅角碼</td>
+                <td>100×100×8mm</td>
+                <td>件</td>
+                <td>160</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-L301</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>28</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅角鐵焊板</td>
+                <td>6790×100×100</td>
+                <td>件</td>
+                <td>1</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-L206</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>29</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅角鐵焊板</td>
+                <td>6965×100×100</td>
+                <td>件</td>
+                <td>1</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-L207</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>30</td> <!-- 自增序号 -->
+                <td>噴油鍍鋅角鐵焊板</td>
+                <td>6290×100×100</td>
+                <td>件</td>
+                <td>1</td>
+
+                <!-- 检查是否需要合并行 -->
+                <td>84-L208</td>
+                <td>SON20413 -SY24-010</td>
+                <td>
+                    
+                        0.00
+                    
+                </td>
+            </tr>
+            
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+        <table class="table2">
+            <tbody>
+                <tr>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;text-align: center">合计</td>
+                    <td style="border: none;text-align: center">737</td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;text-align: center">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            出货批次:</br>
+            
+                SON20413-SY24-008&nbsp;&nbsp;第5批  (完) </br>
+            
+                SON20413 -SY24-010&nbsp;&nbsp;第3批  (完) </br>
+            
+                SON20412 -SY24-003&nbsp;&nbsp;第2批  (完) </br>
+            
+        </div>
+    </div>
+</body>
+</html>

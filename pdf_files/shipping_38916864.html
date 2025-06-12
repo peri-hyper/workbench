@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送货单</title>
+    <style>
+        table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 5px auto
+            }
+              tr {
+         page-break-inside: avoid;
+        }
+      tfoot {
+      border: 0px solid black;
+
+      }
+
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        /* 设置不显示边框的表格样式 */
+        .borderless-table {
+
+            border-collapse: collapse;
+            border: none; /* 去掉边框 */
+        }
+
+        .borderless-table td {
+            padding: 6px; /* 设置单元格内边距 */
+            text-align: left; /* 设置文本居中对齐 */
+            border: none
+        }
+
+        .borderless-table th {
+            background-color: #f2f2f2; /* 设置背景颜色 */
+            padding: 8px; /* 设置表头内边距 */
+            
+        }
+        .borderless-table th:nth-child(1), .borderless-table td:nth-child(1) {
+            width: 60%; /* 5% 的宽度 */
+        }
+        .borderless-table th:nth-child(2), .borderless-table td:nth-child(2) {
+            width: 40%; /* 5% 的宽度 */
+        }
+
+        /* 设置列宽 */
+        .table2 th:nth-child(1), .table2 td:nth-child(1) {
+            width: 9%; /* 5% 的宽度 */
+        }
+        .table2 th:nth-child(2), .table2 td:nth-child(2) {
+            width: 15%; /* 20% 的宽度 */
+        }
+        .table2 th:nth-child(3), .table2 td:nth-child(3) {
+            width: 20%; /* 15% 的宽度 */
+        }
+        .table2 th:nth-child(4), .table2 td:nth-child(4) {
+            width: 8%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(5), .table2 td:nth-child(5) {
+            width: 10%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(6), .table2 td:nth-child(6) {
+            width: 15%; /* 10% 的宽度 */
+        }
+        .table2 th:nth-child(7), .table2 td:nth-child(7) {
+            width: 23%; /* 15% 的宽度 */
+        }
+        /* 文字居中对齐 */
+        .table2 th, .table2 td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <table id="table3" class="table2">
+            <thead  style="border-style:none" >
+
+
+
+            <tr>
+                <th>序号</th>
+                <th>品名</th>
+                <th>规格</th>
+                <th>单位</th>
+                <th>数量</th>
+                <th>编号</th>
+                <th>项目名称</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <td>1</td> <!-- 自增序号 -->
+                <td>8B通(Ø220)</td>
+                <td>L=6924 UCF=60 X1=230 X2=200</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>2</td> <!-- 自增序号 -->
+                <td>K2鐵頁及亦仔</td>
+                <td>7054×80×1.2mm</td>
+                <td>套</td>
+                <td>49</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>3</td> <!-- 自增序号 -->
+                <td>1.5mm鍍鋅鐵路軌</td>
+                <td>3400×150×100</td>
+                <td>對</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>4</td> <!-- 自增序号 -->
+                <td>2mm鍍鋅鐵U槽</td>
+                <td>7054×50×34</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>5</td> <!-- 自增序号 -->
+                <td>1mm鍍鋅鐵片</td>
+                <td>7054×62×1mm</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>6</td> <!-- 自增序号 -->
+                <td>軸頭基仔</td>
+                <td>76.2×18×11mm</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>7</td> <!-- 自增序号 -->
+                <td>SHK-69038馬達座</td>
+                <td>535×366×300</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>8</td> <!-- 自增序号 -->
+                <td>方型軸承</td>
+                <td>60直徑</td>
+                <td>件</td>
+                <td>2</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>9</td> <!-- 自增序号 -->
+                <td>大牙及配基坑螺絲</td>
+                <td>100號鍊/45齒/60軸頭</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>10</td> <!-- 自增序号 -->
+                <td>螺絲</td>
+                <td>M16×70（兩墊一母）</td>
+                <td>套</td>
+                <td>9</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>11</td> <!-- 自增序号 -->
+                <td>鉛水板</td>
+                <td>500×500×12mm</td>
+                <td>件</td>
+                <td>2</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>12</td> <!-- 自增序号 -->
+                <td>0.8mm 鍍鋅斜板</td>
+                <td>2440×220×30</td>
+                <td>件</td>
+                <td>3</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>13</td> <!-- 自增序号 -->
+                <td>75馬達配件（帶座）</td>
+                <td>20/16T/18T</td>
+                <td>套</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>14</td> <!-- 自增序号 -->
+                <td>75馬達板</td>
+                <td>350×350×8mm</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>15</td> <!-- 自增序号 -->
+                <td>鏈條</td>
+                <td>#60</td>
+                <td>件</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>16</td> <!-- 自增序号 -->
+                <td>鍍鋅鐵收口及頭匣</td>
+                <td>3100</td>
+                <td>套</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>17</td> <!-- 自增序号 -->
+                <td>啤呤</td>
+                <td>45mm</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>18</td> <!-- 自增序号 -->
+                <td>鍍鋅鐵路軌</td>
+                <td>7130×190×46</td>
+                <td>套</td>
+                <td>1</td>
+                <td>2F-07</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            <tr>
+                <td>19</td> <!-- 自增序号 -->
+                <td>鉛水角鋼</td>
+                <td>500×100×10mm</td>
+                <td>件</td>
+                <td>4</td>
+                <td>2F-01</td>
+                <td>荃湾大屋街</td>
+                <!-- 检查是否需要合并行 -->
+
+
+
+
+
+
+
+
+
+
+
+
+            </tr>
+            
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+        <table class="table2">
+            <tbody>
+                <tr>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;text-align: center">合计</td>
+                    <td style="border: none;text-align: center">82</td>
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            出货批次:</br>
+            
+                GS 20240905&nbsp;&nbsp;第2批   </br>
+            
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
