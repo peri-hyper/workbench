@@ -1,0 +1,10 @@
+1. 安装mysql8.0以上版本。
+2. 创建数据库，数据库名erp_db
+3. 导入erp_db.sql文件到数据库中。
+4. 修改django_websvr/settings.py文件中的数据库配置。
+5. 安装相关库，运行命令：
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+6. 双击start.bat或者运行命令：
+python manage.py runserver 0.0.0.0:8000
+7. 打开浏览器，输入http://localhost:8000/，进入系统。
+8. 管理员用户名：admin 密码：123456
